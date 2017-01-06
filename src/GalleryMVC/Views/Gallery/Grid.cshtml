@@ -1,20 +1,22 @@
-﻿@{
+﻿@model GalleryMVC.Models.Movie
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Lenny's Marvel Movie Favorites";
+    ViewBag.Title = Model.DisplayText;
 }
 
-    <h1>@ViewBag.MovieTitle</h1>
+    <h1>@Model.MovieTitle</h1>
 
-    <div>@Html.Raw(ViewBag.Description)</div>
+    <div>@Html.Raw(Model.DescriptionHtml)</div>
 
-    @if (ViewBag.CastStars.Length > 0)
+    @if (Model.CastStars.Length > 0)
     {
         <h5>Cast Members:</h5>
         <div>
             <ul>
-                @foreach (var caststar in ViewBag.CastStars)
+                @foreach (var caststar in Model.CastStars)
                 {
-                    <li>@caststar</li>
+                    <li>@caststar.Role: @caststar.Name</li>
                 }
             </ul>
         </div>
