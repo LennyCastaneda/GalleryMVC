@@ -3,5 +3,19 @@
     ViewBag.Title = "Lenny's Marvel Movie Favorites";
 }
 
+    <h1>@ViewBag.MovieTitle</h1>
 
+    <div>@Html.Raw(ViewBag.Description)</div>
 
+    @if (ViewBag.CastStars.Length > 0)
+    {
+        <h5>Cast Members:</h5>
+        <div>
+            <ul>
+                @foreach (var caststar in ViewBag.CastStars)
+                {
+                    <li>@caststar</li>
+                }
+            </ul>
+        </div>
+    }

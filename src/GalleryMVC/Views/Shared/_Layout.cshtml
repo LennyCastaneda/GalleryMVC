@@ -12,27 +12,30 @@
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <header id="main-header" style="-webkit-box-shadow: -3px 4px 27px 1px rgba(0,0,0,0.56);
+    <div class="wrap"> <!-- Wrapper div to push down the foot to bottom of the view port-->
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <header id="main-header" style="-webkit-box-shadow: -3px 4px 27px 1px rgba(0,0,0,0.56);
 	-moz-box-shadow: -3px 4px 27px 1px rgba(0,0,0,0.56);
 	box-shadow: -3px 4px 27px 1px rgba(0,0,0,0.56);
-	  background-size: 100px; min-width=414; padding: 7px 0px 10px 10px">
-            <div class="title">
-                <h1 class="text-shadow">Marvel Movie Gallery</h1>
+	  background-size: 100px; min-width:414px; padding: 7px 0px 10px 10px" ;>
+                <div class="title">
+                    <h1 class="text-shadow">@ViewBag.Title</h1>
+                </div>
+            </header>
+        </div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr />
+            <div class="stick-footer">
+                <div></div>
             </div>
-        </header>
+        </div>
     </div>
+            <footer>
+                <p class="text-center">&copy; @DateTime.Now.Year - Lenny's Marvel Movie Gallery</p>
+            </footer>
 
-    <div class="container body-content">
-        @RenderBody()
-        <hr/>
-        <div class="container"></div>
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Lenny's Marvel Movie Gallery</p>
-        </footer>
-    </div>
-
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
 </body>
 </html>

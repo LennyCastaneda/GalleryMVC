@@ -10,6 +10,7 @@ header {
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
+    padding-top: 90px;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -46,4 +47,37 @@ textarea {
 
 .series-list li:last-child{
   border: none;
+}
+
+/* Wrapper for page content to push down footer */
+div.wrap {
+  min-height: calc(100vh - 98px);
+/*   min-height: auto; */
+  /* Negative indent footer by its height */
+  margin: 25px auto 10px;
+  /* Pad bottom by footer height */
+  padding: 0 10px 0px;
+}
+
+.footer {
+	position: relative;
+	right:  0;
+	bottom:  0;
+	left:  0;
+	padding:  .9rem;
+	margin-top: 0px;
+	text-align: center;
+	background: #337ab7;
+	color:  white;
+} 
+
+.push {
+	height: .5em;
+}
+
+/*Establishes the parameters for sticky footer*/
+.footer, .push {
+	font-size: 1em;
+	clear: both;
+	text-align: center;
 }
