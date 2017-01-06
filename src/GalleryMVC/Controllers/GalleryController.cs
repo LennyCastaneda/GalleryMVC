@@ -11,7 +11,7 @@ namespace GalleryMVC.Controllers
         public ActionResult Grid()
         {
             ViewBag.MovieTitle = "The Amazing Spiderman (2012)";
-            ViewBag.Description = "After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to solve the mystery of his parent's mysterious death.";
+            ViewBag.Description = "<p>After Peter Parker is bitten by a genetically altered spider, he gains newfound, spider-like powers and ventures out to solve the mystery of his parent's mysterious death.</p>";
             ViewBag.CastStars = new string[]
             {
                 "Andrew Garfield: Sprider-Man / Peter Parker",
