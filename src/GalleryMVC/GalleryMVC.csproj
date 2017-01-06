@@ -118,9 +118,9 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Images\amazing-spiderman-2012.jpg" />
-    <Content Include="Images\amazing-spiderman2-2014.jpg" />
     <Content Include="Images\avengers-2012.jpg" />
+    <Content Include="Images\the-amazing-spiderman-2012.jpg" />
+    <Content Include="Images\the-amazing-spiderman2-2014.jpg" />
     <Content Include="Images\x-men-future-past-2014.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />

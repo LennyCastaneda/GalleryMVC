@@ -5,19 +5,34 @@
     ViewBag.Title = Model.DisplayText;
 }
 
-    <h1>@Model.MovieTitle</h1>
+    <h2>@Model.DisplayText</h2>
 
-    <div>@Html.Raw(Model.DescriptionHtml)</div>
-
-    @if (Model.CastStars.Length > 0)
-    {
-        <h5>Cast Members:</h5>
-        <div>
-            <ul>
-                @foreach (var caststar in Model.CastStars)
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <h5><label>Movie Title:</label> @Model.MovieTitle</h5>
+                <h5><label>Year:</label> @Model.Year</h5>
+                @if (Model.CastStars.Length > 0)
                 {
-                    <li>@caststar.Role: @caststar.Name</li>
+                    <h5>Cast Members:</h5>
+                        <div>
+                            <ul>
+                                @foreach (var caststar in Model.CastStars)
+                                {
+                                    <li>@caststar.Role: @caststar.Name</li>
+                                }
+                            </ul>
+                        </div>
                 }
-            </ul>
+            </div>
+            <h5>Description</h5>
+            <div>@Html.Raw(Model.DescriptionHtml)</div>
         </div>
-    }
+        <div class="col-md-6">
+            <img src="/Images/@Model.MoviePosterFileName"
+                 alt="@Model.DisplayText" class="img-responsive" />
+        </div>
+    </div>
+
+
+    
