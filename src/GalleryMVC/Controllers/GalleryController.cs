@@ -8,7 +8,7 @@ namespace GalleryMVC.Controllers
 {
     public class GalleryController : Controller
     {
-        public ActionResult Detail()
+        public ActionResult Grid()
         {
             return View();
         }
