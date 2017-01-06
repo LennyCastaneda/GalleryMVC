@@ -4,13 +4,16 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using System.Data.Entity.Infrastructure;
 
 namespace GalleryMVC.Infrastructure
 {
     public class MovieDataContext
     {
-        public class MovieDataContext : DbContext
+        public class MovieDataContext : DbContext, IMovieDataContext
         {
+            private static DbCompiledModel MarvelMovieGallery;
+
             public MovieDataContext() : base(MarvelMovieGallery)
             {
 
@@ -20,7 +23,7 @@ namespace GalleryMVC.Infrastructure
             public IDbSet<CastStar> CastStar { get; set; }
             public IDbSet<Movie> Movie { get; set; }
 
-            // Explicity model the relationships between these 3 entities (classes). Movie has many CastStars, CastStars has many Movies, etc.
+            // Explicity model the relationships between these 2 entities (classes). Movie has many CastStars, CastStars has many Movies, etc.
             // Code-First Fluent API
             protected override void OnModelCreating(DbModelBuilder modelBuilder)
             {
@@ -31,23 +34,21 @@ namespace GalleryMVC.Infrastructure
                             // (with values) containing both foreign keys (StudentId and ProjectId) that form the compound key.
                             .HasKey(c => new { c.CastStarId, c.MovieId });
 
-                // A Project has many Assignments
+                // A CastStar has many Movies
                 modelBuilder.Entity<CastStar>()
-                            // A Project has many Assignments
-                            .HasMany(p => p.Movie)
-                            // An Assignment is with a required Project object
-                            .WithRequired(a => a.Project)
-                            // And this Assignment has a foreign key of ProjectId
-                            .HasForeignKey(a => a.ProjectId);
+                            // A CastStar has many Movies
+                            .HasMany(m => m.Movies)
+                            // An Movie is with a required CastStar object
+                            .WithRequired(c => c.Movie)
+                            // And this Movie has a foreign key of MovieId
+                            .HasForeignKey(c => c.MovieId);
 
-                // A Student has many Assignments
-                modelBuilder.Entity<Student>()
+                // A Movie has many CastStars
+                modelBuilder.Entity<Movie>()
                             // A Student has many Assignments
-                            .HasMany(p => p.Assignments)
-                            // An Assignment is with a required Student object 
-                            .WithRequired(a => a.Student)
+                            .HasMany(c => c.CastStars)
                             // And this Assignment has a foreign key of StudentId
-                            .HasForeignKey(a => a.StudentId);
+                            .HasForeignKey(m => m.CastStarId);
 
             }
         }
