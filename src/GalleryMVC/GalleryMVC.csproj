@@ -118,9 +118,10 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="Scripts\jquery-1.9.1.intellisense.js" />
-    <Content Include="Images\bone-50.jpg" />
-    <Content Include="Images\the-amazing-spider-man-657.jpg" />
-    <Content Include="Images\the-amazing-spider-man-700.jpg" />
+    <Content Include="Images\amazing-spiderman.jpg" />
+    <Content Include="Images\amazing-spiderman2.jpg" />
+    <Content Include="Images\avengers.jpg" />
+    <Content Include="Images\x-men-future-past.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.9.1.js" />
